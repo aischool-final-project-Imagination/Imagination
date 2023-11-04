@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Leader = () => {
-  return <div>leader</div>;
+  return <div>leaders</div>;
 };
 
 export default Leader;
