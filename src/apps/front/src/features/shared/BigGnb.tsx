@@ -52,10 +52,12 @@ const BigGnb = () => {
           </div>
 
           <div className="BigGnb-btn">
-            {[{ to: '/feed', img: './img/feed.png', text: 'Feed' }, 
-            { to: '/leader', img: './img/rank.png', text: 'Rank' }, 
-            { to: '/explore', img: './img/explore.png', text: 'Explore' }, 
-            { to: '/imagination', img: './img/ai.png', text: 'AI' },].map(({ to, img, text }) => (
+            {[
+              { to: '/feed', img: './img/feed.png', text: 'Feed' },
+              { to: '/leader', img: './img/rank.png', text: 'Rank' },
+              { to: '/explore', img: './img/explore.png', text: 'Explore' },
+              { to: '/imagination', img: './img/ai.png', text: 'AI' },
+            ].map(({ to, img, text }) => (
               <Link to={to} key={to}>
                 <div className={checkActive(to)}>
                   <img src={img} className="BigGnb-icon" />
@@ -64,7 +66,6 @@ const BigGnb = () => {
               </Link>
             ))}
           </div>
-
         </div>
 
         <div className="BigGnb-footer">
