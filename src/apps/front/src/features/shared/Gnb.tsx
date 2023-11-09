@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Gnb = () => {
   return (
     <div>
-      <nav className="Gnb" style={{ marginLeft: 400 }}>
+      <nav className="Gnb">
         <div className="Gnb-main">
           <div className="Gnb-icon">
             <img src="./img/I.png" alt="" className="Gnb-i"></img>
@@ -15,25 +15,26 @@ const Gnb = () => {
               className="Gnb-profile-img"
             ></img>
           </div>
-          <div className="Gnb-hoverwhite">
-            <Link to={'/feed'}>
+          <Link to={'/feed'}>
+            <div className="Gnb-hoverwhite">
               <img src="./img/feed.png" className="Gnb-nav-icon" />
-            </Link>
-          </div>
-          <div className="Gnb-hoverwhite">
-            <Link to={'/leader'}></Link>
-            <img src="./img/rank.png" className="Gnb-nav-icon" />
-          </div>
-          <div className="Gnb-hoverwhite">
+            </div>
+          </Link>
+          <Link to={'/leader'}>
+            <div className="Gnb-hoverwhite">
+              <img src="./img/rank.png" className="Gnb-nav-icon" />
+            </div>
+          </Link>
             <Link to={'/explore'}>
-              <img src="./img/explore.png" className="Gnb-nav-icon" />
-            </Link>
-          </div>
           <div className="Gnb-hoverwhite">
-            <Link to={'/imagination'}>
-              <img src="./img/ai.png" className="Gnb-nav-icon" />
-            </Link>
+              <img src="./img/explore.png" className="Gnb-nav-icon" />
           </div>
+            </Link>
+            <Link to={'/imagination'}>
+          <div className="Gnb-hoverwhite">
+              <img src="./img/ai.png" className="Gnb-nav-icon" />
+          </div>
+            </Link>
         </div>
         <div className="Gnb-footer">
           <div className="Gnb-line"></div>

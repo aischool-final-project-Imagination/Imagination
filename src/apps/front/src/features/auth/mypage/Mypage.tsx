@@ -1,7 +1,8 @@
-import React from 'react';
-
+import Gnb from "../../shared/Gnb";
 const Mypage = () => {
-  return <div>mypage</div>;
+  return <div>
+    <Gnb/>
+  </div>;
 };
 
 export default Mypage;

@@ -33,18 +33,18 @@
   justify-content: space-between;
   margin-bottom: 15px;
 
-  .modal-header-img {
+  &-img {
     width: 40px;
     height: 40px;
     border-radius: 10px;
   }
 
-  .modal-header-profile {
+  &-profile {
     display: flex;
     align-items: center;
   }
 
-  .modal-header-profile > span {
+  &-profile > span {
     margin-left: 18px;
   }
 }
@@ -55,31 +55,31 @@
   border-bottom: 1px solid #e9e9e9;
   display: flex;
 
-  .modal-main-img {
+  &-img {
     width: 450px;
     height: 450px;
     border-radius: 4px;
   }
 
-  .modal-main-right {
+  &-right {
     padding: 0px 50px;
   }
 
-  .modal-main-right > h3 {
+  &-right > h3 {
     margin-bottom: 33px;
   }
 
-  .modal-main-right-div {
+  &-right-div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
-  .modal-main-right-battom {
+  &-right-battom {
     padding-left: 50px;
   }
 
-  .modal-main-right-battom > h5 {
+  &-right-battom > h5 {
     padding: 15px 0px;
   }
 }
@@ -122,22 +122,22 @@
 .modal-footer {
   display: flex;
   justify-content: space-between;
-  .modal-footer-prompt,
-  .modal-footer-Nagative {
+  &-prompt,
+  &-Nagative {
     display: flex;
     width: 449px;
     justify-content: space-between;
     padding: 15px 0px;
   }
 
-  .modal-footer-prompt > div > img,
-  .modal-footer-Nagative > div > img {
+  &-prompt > div > img,
+  &-Nagative > div > img {
     position: relative;
     top: 3px;
     right: 7px;
   }
 
-  .modal-footer-text {
+  &-text {
     width: 449px;
     height: 147px;
     border-radius: 10px;

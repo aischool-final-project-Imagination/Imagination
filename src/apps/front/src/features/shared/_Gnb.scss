@@ -24,7 +24,8 @@ $border-radius: 10px;
     border-radius: $border-radius;
   }
 
-  &-main > div {
+  &-main > div,
+  &-main > a > div {
     margin-bottom: 20px;
   }
 
@@ -37,7 +38,7 @@ $border-radius: 10px;
     height: 24px;
   }
 
-  &-main > .Gnb-hoverwhite,
+  &-main> a > .Gnb-hoverwhite,
   &-footer > .Gnb-hoverwhite {
     padding: 13px;
   }

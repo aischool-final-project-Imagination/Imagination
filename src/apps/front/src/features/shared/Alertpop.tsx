@@ -15,6 +15,22 @@ const Alertpop: FunctionComponent<AlertpopProps> = ({ isOpen, onClose }) => {
     event.stopPropagation();
   };
 
+  const data = 
+    {
+      userProfileImg: "https://i.namu.wiki/i/xl7WXBmp2VQ7mQRz53DlZ_7S1O4CEA_6RERhydKMTPYsdK9oXAcvqhtijh_rHQNw1fYt7skGA4vnMOJNg40jQA.webp",
+      userName: "leechi",
+      MainImg: "./img/card-img.png",
+      title: "물감으로 만든 화려한 바다",
+      content: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti facere, illo accusantium quibusdam unde vitae qui libero. Fugiat maxime ea unde neque illo at. Eveniet quod dolor recusandae sed sit.",
+      hashtags: "#물감,#사랑,#바다",
+      likeCount: 22,
+      prompt: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti facere, illo accusantium quibusdam unde vitae qui libero. Fugiat maxime ea unde neque illo at. Eveniet quod dolor recusandae sed sit.",
+      Nprompt: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti facere, illo accusantium quibusdam unde vitae qui libero. Fugiat maxime ea unde neque illo at. Eveniet quod dolor recusandae sed sit."
+    }
+
+
+
+
   return (
     <div className={`alertpop ${isOpen ? 'open' : ''}`} onClick={handleBgClick}>
       {isOpen && (
@@ -23,34 +39,29 @@ const Alertpop: FunctionComponent<AlertpopProps> = ({ isOpen, onClose }) => {
             <div className="modal-header">
               <div className="modal-header-profile">
                 <img
-                  src="https://i.namu.wiki/i/xl7WXBmp2VQ7mQRz53DlZ_7S1O4CEA_6RERhydKMTPYsdK9oXAcvqhtijh_rHQNw1fYt7skGA4vnMOJNg40jQA.webp"
+                  src={data.userProfileImg}
                   alt=""
                   className="modal-header-img"
                 />
-                <span>leechi</span>
+                <span>{data.userName}</span>
               </div>
               <button onClick={onClose}>
                 <img src="./img/close.png" alt="" />
               </button>
             </div>
             <div className="modal-main">
-              <img src="./img/card-img.png" alt="" className="modal-main-img" />
+              <img src={data.MainImg} alt="" className="modal-main-img" />
               <div className="modal-main-right-div">
                 <div className="modal-main-right">
-                  <h3>물감으로 만든 화려한 바다</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
-                    consequatur commodi sequi sit architecto, ex nulla
-                    reiciendis modi quaerat quisquam autem officiis recusandae
-                    ullam labore, aut quae harum? Perferendis, asperiores!
-                  </p>
+                  <h3>{data.title}</h3>
+                  <p>{data.content}</p>
                 </div>
                 <div className="modal-main-right-battom">
-                  <h5>#물감,#사랑,#바다</h5>
+                  <h5>{data.hashtags}</h5>
                   <div className="modal-Btn">
                     <button className="modal-LikeBtn">
                       <img src="./img/like.png" alt="" />
-                      <span>22</span>
+                      <span>{data.likeCount}</span>
                     </button>
                     <button className="modal-CreateImage">
                       <img src="./img/CreateImage.png" alt="" />
@@ -71,12 +82,7 @@ const Alertpop: FunctionComponent<AlertpopProps> = ({ isOpen, onClose }) => {
                   </div>
                 </div>
                 <div className="modal-footer-text">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Corrupti facere, illo accusantium quibusdam unde vitae qui
-                    libero. Fugiat maxime ea unde neque illo at. Eveniet quod
-                    dolor recusandae sed sit.
-                  </p>
+                  <p>{data.prompt}</p>
                 </div>
               </div>
               <div className="prompt-div">
@@ -88,12 +94,7 @@ const Alertpop: FunctionComponent<AlertpopProps> = ({ isOpen, onClose }) => {
                   </div>
                 </div>
                 <div className="modal-footer-text">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Corrupti facere, illo accusantium quibusdam unde vitae qui
-                    libero. Fugiat maxime ea unde neque illo at. Eveniet quod
-                    dolor recusandae sed sit.
-                  </p>
+                  <p>{data.Nprompt}</p>
                 </div>
               </div>
             </div>

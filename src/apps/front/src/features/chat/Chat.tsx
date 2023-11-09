@@ -1,7 +1,8 @@
-import React from 'react';
-
+import Gnb from "../shared/Gnb";
 const Chat = () => {
-  return <div>chat</div>;
+  return <div>
+    <Gnb/>
+  </div>;
 };
 
 export default Chat;
