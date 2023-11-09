@@ -52,31 +52,19 @@ const BigGnb = () => {
           </div>
 
           <div className="BigGnb-btn">
-            <Link to={'/feed'}>
-              <div className={checkActive('/feed')}>
-                <img src="./img/feed.png" className="BigGnb-icon" />
-                <span>Feed</span>
-              </div>
-            </Link>
-            <Link to={'/leader'}>
-              <div className={checkActive('/leader')}>
-                <img src="./img/rank.png" className="BigGnb-icon" />
-                <span>Rank</span>
-              </div>
-            </Link>
-            <Link to={'/explore'}>
-              <div className={checkActive('/explore')}>
-                <img src="./img/explore.png" className="BigGnb-icon" />
-                <span>Explore</span>
-              </div>
-            </Link>
-            <Link to={'/imagination'}>
-              <div className={checkActive('/imagination')}>
-                <img src="./img/ai.png" className="BigGnb-icon" />
-                <span>AI</span>
-              </div>
-            </Link>
+            {[{ to: '/feed', img: './img/feed.png', text: 'Feed' }, 
+            { to: '/leader', img: './img/rank.png', text: 'Rank' }, 
+            { to: '/explore', img: './img/explore.png', text: 'Explore' }, 
+            { to: '/imagination', img: './img/ai.png', text: 'AI' },].map(({ to, img, text }) => (
+              <Link to={to} key={to}>
+                <div className={checkActive(to)}>
+                  <img src={img} className="BigGnb-icon" />
+                  <span>{text}</span>
+                </div>
+              </Link>
+            ))}
           </div>
+
         </div>
 
         <div className="BigGnb-footer">

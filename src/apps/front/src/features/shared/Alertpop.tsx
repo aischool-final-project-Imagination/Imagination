@@ -1,4 +1,4 @@
-import { FunctionComponent, MouseEventHandler } from "react";
+import { FunctionComponent, MouseEventHandler } from 'react';
 
 export type AlertpopProps = {
   isOpen: boolean;
