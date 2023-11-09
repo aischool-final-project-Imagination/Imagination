@@ -78,16 +78,16 @@ const Alertpop: FunctionComponent<AlertpopProps> = ({ isOpen, onClose }) => {
                     dolor recusandae sed sit.
                   </p>
                 </div>
-                </div>
-                <div className='prompt-div' >
-                  <div className="modal-footer-Nagative">
-                    <h4>Negatice Prompt</h4>
-                    <div>
-                      <img src="./img/copy.png" alt="" />
-                      <span>copy</span>
-                    </div>
+              </div>
+              <div className="prompt-div">
+                <div className="modal-footer-Nagative">
+                  <h4>Negatice Prompt</h4>
+                  <div>
+                    <img src="./img/copy.png" alt="" />
+                    <span>copy</span>
                   </div>
-                  <div className="modal-footer-text">
+                </div>
+                <div className="modal-footer-text">
                   <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                     Corrupti facere, illo accusantium quibusdam unde vitae qui
@@ -95,7 +95,7 @@ const Alertpop: FunctionComponent<AlertpopProps> = ({ isOpen, onClose }) => {
                     dolor recusandae sed sit.
                   </p>
                 </div>
-                </div> 
+              </div>
             </div>
           </div>
         </div>
