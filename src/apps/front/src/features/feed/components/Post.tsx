@@ -55,7 +55,9 @@ const Post = ({ onImageClick }: { onImageClick: () => void }) => {
             </div>
             <div>
               <img
-                src={isLiked[post.id] ? './img/filledlike.png' : './img/like.png'}
+                src={
+                  isLiked[post.id] ? './img/filledlike.png' : './img/like.png'
+                }
                 alt=""
                 onClick={() => handleLike(post.id)}
               />

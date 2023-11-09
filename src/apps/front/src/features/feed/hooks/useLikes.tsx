@@ -5,10 +5,10 @@ const useLikes = (posts: Array<{ id: string }>) => {
   const [isLiked, setIsLiked] = useState<Record<string, boolean>>(
     posts.reduce((acc, post) => ({ ...acc, [post.id]: false }), {}),
   );
-  
+
   // 좋아요 상태를 바꾸는 작업
   const handleLike = (id: string) => {
-    setIsLiked(prev => ({ ...prev, [id]: !prev[id] }));
+    setIsLiked((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
   return [isLiked, handleLike] as const;
