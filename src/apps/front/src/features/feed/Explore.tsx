@@ -1,13 +1,14 @@
-import Lnb from './components/Lnb';
-import BigGnb from './components/BigGnb';
+import Lnb from '../shared/Lnb';
+import BigGnb from '../shared/BigGnb';
 import FeedLayout from './components/FeedLayout';
+
 const Explore = () => {
   return (
     <div>
-      <main>
+      <section>
         <Lnb />
         <FeedLayout />
-      </main>
+      </section>
       <BigGnb />
     </div>
   );

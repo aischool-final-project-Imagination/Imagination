@@ -1,4 +1,4 @@
-import BigGnb from '../feed/components/BigGnb';
+import BigGnb from '../shared/BigGnb';
 const Imagination = () => {
   return (
     <div>
