@@ -14,9 +14,11 @@ const Lnb = () => {
         </button>
         <div className="Lnb-allim">
           <img src="./img/alarm.png" alt="" className="Lnb-alarm" />
+          <span>6</span>
           <Link to={'/chat'} className="Lnb-chat">
             <img src="./img/share.png" alt="" />
           </Link>
+          <span>6</span>
         </div>
       </div>
     </div>
