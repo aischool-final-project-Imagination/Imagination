@@ -1,22 +1,18 @@
-const Alertpop = ({
-  isOpen,
-  onClose,
-}: {
+import { FunctionComponent, MouseEventHandler } from "react";
+
+export type AlertpopProps = {
   isOpen: boolean;
   onClose: () => void;
-}) => {
-  // 배경 클릭 시 모달을 닫는 함수
-  const handleBgClick = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
-  ) => {
+};
+
+const Alertpop: FunctionComponent<AlertpopProps> = ({ isOpen, onClose }) => {
+  const handleBgClick: MouseEventHandler<HTMLDivElement> = (event) => {
     event.stopPropagation();
-    onClose(); // 모달 닫기 함수 호출
+    onClose();
   };
-  // 모달 내용 클릭 시 이벤트 전파를 막는 함수
-  const handleContentClick = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
-  ) => {
-    event.stopPropagation(); // 이벤트 전파를 막음
+
+  const handleContentClick: MouseEventHandler<HTMLDivElement> = (event) => {
+    event.stopPropagation();
   };
 
   return (
