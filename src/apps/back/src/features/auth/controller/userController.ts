@@ -1,11 +1,8 @@
 import userModel from '../../shared/userModel';
 import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
+import { createToken } from '../helper/createToken';
 
-const createToken = (_id) => {
-  const jwtkey = process.env.JWT_SECRET_KEY;
-  return jwt.sign({ _id }, jwtkey, { expiresIn: '3d' });
-};
+
 
 const checkId = async (req, res, next) => {
   const user = await userModel.findOne({ id: req.body.id });
