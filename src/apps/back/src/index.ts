@@ -4,10 +4,8 @@ import dotenv from 'dotenv';
 import joinRoute from './features/auth/routes/joinRoute';
 import loginRoute from './features/auth/routes/loginRoute';
 import connectToMongoDB from './db';
-
+import { PORT } from '../../../packages/models/port';
 dotenv.config();
-
-const PORT = 3000;
 
 const app = express();
 

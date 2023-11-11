@@ -2,8 +2,6 @@ import userModel from '../../shared/userModel';
 import bcrypt from 'bcrypt';
 import { createToken } from '../helper/createToken';
 
-
-
 const checkId = async (req, res, next) => {
   const user = await userModel.findOne({ id: req.body.id });
   if (user) {
@@ -34,10 +32,11 @@ const handleLogin = async (req, res) => {
 
   if (!isValidPassword) return res.status(400).json('wrong password');
 
+  const userData = { id: id, name: user.name };
   const token = createToken(user._id);
 
   res.cookie('token', token, { httpOnly: true });
-  res.status(200).json({ _id: user._id, name: user.name, id, token });
+  res.status(200).json({ ...userData, token });
 };
 
 export { checkId, joinId, handleLogin };

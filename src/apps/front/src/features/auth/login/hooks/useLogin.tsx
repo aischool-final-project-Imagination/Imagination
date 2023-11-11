@@ -19,6 +19,7 @@ const useLogin = () => {
       .post('/', { id: id, password: pw })
       .then((res) => {
         const newToken = res.data.token;
+        console.log(res.data);
         setUser(res.data);
         setCookie('token', newToken, { path: '/' });
       })
