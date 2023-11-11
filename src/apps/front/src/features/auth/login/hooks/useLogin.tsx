@@ -10,7 +10,6 @@ const useLogin = () => {
   const [msgPassword, setMsgPassword] = useState('');
   const [isDisable, setIsDisable] = useState(true);
   const [cookies, setCookie, removeCookie] = useCookies(['token']);
-  const [user, setUser] = useState();
   const navigate = useNavigate();
 
   const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
@@ -19,8 +18,6 @@ const useLogin = () => {
       .post('/', { id: id, password: pw })
       .then((res) => {
         const newToken = res.data.token;
-        console.log(res.data);
-        setUser(res.data);
         setCookie('token', newToken, { path: '/' });
       })
       .catch((error) => {
@@ -66,7 +63,6 @@ const useLogin = () => {
     msgLogin,
     msgPassword,
     isDisable,
-    user,
   };
 };
 

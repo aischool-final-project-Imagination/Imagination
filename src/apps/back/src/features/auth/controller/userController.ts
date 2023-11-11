@@ -32,11 +32,16 @@ const handleLogin = async (req, res) => {
 
   if (!isValidPassword) return res.status(400).json('wrong password');
 
-  const userData = { id: id, name: user.name };
   const token = createToken(user._id);
+  const userData = { id: id, name: user.name };
 
-  res.cookie('token', token, { httpOnly: true });
-  res.status(200).json({ ...userData, token });
+  res.cookie('token', token, {
+    httpOnly: true,
+    sameSite: 'none',
+    secure: true,
+  });
+  res.setHeader('Authorization', `bearer ${token}`);
+  res.status(200).json({ ...userData });
 };
 
 export { checkId, joinId, handleLogin };
