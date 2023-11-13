@@ -58,10 +58,17 @@ const loginSuccess = async (req, res) => {
   if (!token) {
     return res.status(401).json({ error: 'Token not provided' });
   }
-  const data = jwt.verify(token, process.env.JWT_SECRET_KEY);
-  const user = await userModel.findOne({ _id: data._id });
-  res.status(200).json(user);
-  console.log(user);
+  try {
+    const data = jwt.verify(token, process.env.JWT_SECRET_KEY);
+    const user = await userModel.findOne({ _id: data._id });
+
+    // 비밀번호를 제외한 사용자 데이터를 가져옴
+
+    res.status(200).json(user);
+  } catch (error) {
+    // 토큰이 유효하지 않은 경우 또는 다른 오류 발생 시
+    res.status(401).json({ error: 'Invalid token' });
+  }
 };
 
 const logout = (req, res) => {

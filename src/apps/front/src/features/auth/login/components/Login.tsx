@@ -8,6 +8,7 @@ const Login = () => {
   const [isLogin, setIsLogin] = useState(false);
   const [user, setUser] = useState({});
   console.log(user);
+
   useEffect(() => {
     axios.get('/login/success').then((res) => {
       if (res.data) {
