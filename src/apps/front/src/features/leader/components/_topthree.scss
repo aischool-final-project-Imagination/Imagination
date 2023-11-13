@@ -1,0 +1,61 @@
+.Topthree {
+  display: flex;
+  width: 100%; // Adjust the width as needed
+
+  .card {
+    display: inline-block;
+    width: 400px;
+    height: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 12px #aaa;
+
+    .top-three-blue-box-size {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      background: #0288d1;
+      color: white;
+      border-radius: 10px;
+      margin-right: 10px;
+    }
+
+    .top-three-img-size {
+      width: 200px; // Reduced width
+      height: auto;
+      border-radius: 10%;
+    }
+
+    .top-three-blue-box-size {
+      position: absolute;
+      z-index: 10;
+      /* Adjust the value as needed */
+      display: inline-flex;
+      /* Uses inline-flex to make the item inline but also a flex container */
+      justify-content: center;
+      /* Centers children horizontally */
+      align-items: center;
+      /* Centers children vertically */
+      gap: 10px;
+      /* Spaces out children */
+      padding: 10px 20px;
+      /* Pads the container */
+      background: #0288d1;
+      /* Sets a blue background color */
+      color: white;
+      /* Sets the text color to white */
+      border-radius: 10px;
+      /* Rounds the corners */
+      margin-right: 10px;
+      /* Adds margin to the right */
+    }
+
+    .name,
+    .grade,
+    .score {
+      margin: 10px 0;
+    }
+  }
+}

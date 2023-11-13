@@ -1,0 +1,27 @@
+.Topheader {
+  text-align: center;
+
+  .leaderboard {
+    margin-bottom: 1em;
+    padding: 2%;
+  }
+
+  .duration {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+
+    > button {
+      border: 1px solid var(--color-light);
+      padding: 0.5em 2em;
+      border-radius: 50px;
+      background-color: transparent;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--color-dark);
+        color: var(--color-light);
+      }
+    }
+  }
+}

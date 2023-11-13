@@ -5,7 +5,7 @@ import Create from '../create/Create';
 import Chat from '../chat/chat';
 import Login from '../auth/login/login';
 import Imagination from '../imagination/imagination';
-import Leader from '../leader/leader';
+import Leader from '../leader/Leader';
 import Mypage from '../auth/mypage/mypage';
 import Join from '../auth/join/join';
 import Explore from '../feed/explore';
