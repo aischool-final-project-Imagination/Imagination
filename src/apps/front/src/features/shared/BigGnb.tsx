@@ -1,11 +1,10 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import useLogin from '../auth/login/hooks/useLogin';
-import {useAtom} from 'jotai'
-import {userAtom} from '../auth/login/components/Login'
-
+import { useAtom } from 'jotai';
+import { userAtom } from '../auth/login/components/Login';
 const BigGnb = () => {
-  const [user] = useAtom(userAtom)
+  const [user] = useAtom(userAtom);
   const location = useLocation();
   // checkActive 함수는 경로를 인자로 받는다
   const checkActive = (path: string) => {
@@ -23,7 +22,6 @@ const BigGnb = () => {
     following: 123,
     followers: 123,
   });
-
 
   const { handleLogout } = useLogin();
   return (
