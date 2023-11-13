@@ -5,7 +5,7 @@ import { LoginForm } from './LoginForm';
 import { LoginQuestionBox } from './LoginQuestionBox';
 import { atom, useAtom } from 'jotai';
 
-const userAtom = atom({});
+export const userAtom = atom({});
 
 const Login = () => {
   const [user, setUser] = useAtom(userAtom);
