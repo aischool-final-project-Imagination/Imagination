@@ -1,5 +1,8 @@
+import BigGnb from '../../shared/BigGnb';
+import Lnb from '../../shared/Lnb';
 import { useImagination } from '../hooks/useImagination';
 import { SampleButtton } from './button/button';
+import { SizeButton } from './button/button';
 
 const Imagination = () => {
   const {
@@ -19,12 +22,17 @@ const Imagination = () => {
     isLoading,
     setButtonDisabled,
     handleSizeClick,
-    sizeWidth,
     buttonList,
+    selectedSize,
+    sizeList,
   } = useImagination();
 
   return (
     <div>
+      <BigGnb />
+      <div className="imagination-lnb">
+        <Lnb />
+      </div>
       <div className="imagination-main">
         <form onSubmit={generateImage} className="imagination-form">
           <div>
@@ -75,37 +83,20 @@ const Imagination = () => {
                 value={idx + 1}
                 onClick={handleNumberClick}
                 selected={selectedsamples === idx + 1}
+                disabled={isLoading}
               />
             ))}
             <div className="settings-options-02">
               <p>Image Dimensions</p>
-              <button
-                className={`size-btn ${
-                  sizeWidth === 512 ? 'selectedSize' : ''
-                }`}
-                type="button"
-                onClick={() => handleSizeClick(512, 512)}
-              >
-                512 X 512
-              </button>
-              <button
-                className={`size-btn ${
-                  sizeWidth === 384 ? 'selectedSize' : ''
-                }`}
-                type="button"
-                onClick={() => handleSizeClick(384, 640)}
-              >
-                384 X 640
-              </button>
-              <button
-                className={`size-btn ${
-                  sizeWidth === 640 ? 'selectedSize' : ''
-                }`}
-                type="button"
-                onClick={() => handleSizeClick(640, 384)}
-              >
-                640 X 384
-              </button>
+              {sizeList.map((size, idx) => (
+                <SizeButton
+                  key={idx}
+                  size={size}
+                  onClick={() => handleSizeClick(size)}
+                  selectedSize={selectedSize}
+                  disabled={isLoading}
+                />
+              ))}
             </div>
           </div>
           <div className="img-Generate">
@@ -113,36 +104,49 @@ const Imagination = () => {
               type="submit"
               className="generate-btn-active"
               disabled={buttonDisabled}
-              onClick={() => setButtonDisabled(isLoading)} // Fix the function call
+              onClick={() => setButtonDisabled(isLoading)}
               style={{ background: buttonBg }}
             >
               <img src={imgSrc} alt="image" />
               <p>{buttonText}</p>
             </button>
           </div>
-        </form>
-      </div>
-      <div className="Generated-imgs">
-        {isLoading ? (
-          <div className="loading-img">
-            <img
-              src="imagination/funder-the-sea-octopus.gif"
-              alt="Loading"
-              className="loding-img"
+          <div className="image-history">
+            <h2>Image Generation History</h2>
+            <p>
+              <b>2023/11/01</b>
+            </p>
+            <textarea
+              readOnly={true}
+              cols={15}
+              rows={3}
+              className="prompt-input"
+              value={
+                '입력한 프롬프트 값입니다.입력한 프롬프트 값입니다.입력한 프롬프트 값입니다.'
+              }
             />
           </div>
-        ) : (
-          imageUrls &&
-          imageUrls.map((imageUrl, index) => (
-            <div className="Generated-img" key={index}>
-              <img src={imageUrl} alt="Generated" className="img" />
-              <a href={imageUrl} download="image.jpg" target="#">
-                사진 다운로드
-              </a>
-              {/* 임시 기능 */}
-            </div>
-          ))
-        )}
+          <div className="Generated-imgs">
+            {isLoading
+              ? Array(selectedsamples)
+                  .fill(null)
+                  .map((_, idx) => (
+                    <div className="loading-img" key={idx}>
+                      <img
+                        src="imagination/funder-the-sea-octopus.gif"
+                        alt="Loading"
+                        className="loding-img"
+                      />
+                    </div>
+                  ))
+              : imageUrls &&
+                imageUrls.map((imageUrl, index) => (
+                  <div className="Generated-img" key={index}>
+                    <img src={imageUrl} alt="Generated" className="img" />
+                  </div>
+                ))}
+          </div>
+        </form>
       </div>
     </div>
   );

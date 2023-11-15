@@ -4,16 +4,20 @@ import Imagination from '../imagination/components/Imagination';
 import Login from '../auth/login/components/Login';
 import Join from '../auth/join/components/Join';
 import Explore from '../feed/Explore';
+import Chat from '../chat/Chat';
+import Create from '../createBoardList/Create';
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/imagination" element={<Imagination />}></Route>
           <Route path="/" element={<Login />} />
           <Route path="/join" element={<Join />} />
           <Route path="/explore" element={<Explore />} />
+          <Route path="/imagination" element={<Imagination />} />
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/create" element={<Create />} />
         </Routes>
       </BrowserRouter>
     </>

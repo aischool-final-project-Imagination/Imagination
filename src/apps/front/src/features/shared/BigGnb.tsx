@@ -19,6 +19,7 @@ const BigGnb = () => {
     following: 123,
     followers: 123,
   });
+
   const { handleLogout } = useLogin();
   return (
     <div>
