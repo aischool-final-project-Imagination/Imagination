@@ -1,29 +1,37 @@
+//_toptail.tsx
 .top-tail {
   .top-tail-list {
-    padding-left: 10%;
+    padding-left: 8%;
     align-items: center;
     display: flex;
 
-    .top-tail-span {
-      color: #fff;
-      font-family: Pretendard;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-      width: 35px;
-      height: 35px;
-      flex-shrink: 0;
-      fill: #0288d1;
-      color: #fff;
-      background-color: #0288d1; // To make it stand out
-      border-radius: 50%; // Optional: to make it circular
-      display: flex;
-      justify-content: center;
-      align-items: center; // Center the content within the span
-    }
-
     .top-tail-post {
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.04);
+      }
+
+      .top-tail-span {
+        margin-right: 1%;
+        margin-top: 5%;
+        color: #fff;
+        font-family: Pretendard;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        width: 35px;
+        height: 35px;
+        flex-shrink: 0;
+        fill: #0288d1;
+        background-color: #0288d1; // To make it stand out
+        border-radius: 50%; // Optional: to make it circular
+        display: flex;
+        justify-content: center;
+        align-items: center; // Center the content within the span
+      }
+
       display: flex;
       padding: 1%;
       width: 945px;
@@ -44,7 +52,7 @@
       }
 
       .top-tail-info {
-        padding: 1em;
+        padding-left: 5%;
 
         .top-tail-title {
           padding-bottom: 34px;
@@ -68,7 +76,7 @@
       }
 
       .top-tail-liked {
-        padding-top: 143px;
+        // padding-top: 143px;
         color: #000;
         font-family: Pretendard;
         font-size: 16px;
