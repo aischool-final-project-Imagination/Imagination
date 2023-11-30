@@ -1,10 +1,9 @@
 //LeaderModal.tsx
 // import React, { useState } from 'react';
-
 import { Link } from 'react-router-dom';
 import useCopy from '../../shared/hooks/useCopy';
 // import { PostType } from '../../shared/types/PostType';
-import useLikes from '../../feed/hooks/useLikes';
+import useLeaderLikes from '../hooks/useLeaderLikes';
 import './_leaderModal.scss';
 // import { PUBLIC_URL } from '../../../../../../../packages/models/port';
 interface LeaderModalProps {
@@ -59,8 +58,7 @@ const LeaderModal: React.FC<LeaderModalProps> = ({
   } = useCopy();
   // const objectId = sessionStorage.getItem('_id');
 
-  const { isLiked, handleLike } = useLikes(data ? [data] : []);
-  // const [isLiked, handleLike] = useLikes([{ _id: data._id, ...data }]);
+  const { isLiked, handleLike } = useLeaderLikes(data ? [data] : []);
 
   if (!isOpen || !data) {
     return null;
