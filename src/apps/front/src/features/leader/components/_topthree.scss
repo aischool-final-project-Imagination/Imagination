@@ -1,3 +1,4 @@
+//_topthree.scss
 $font-family-default: Pretendard;
 $color-black: #000;
 $color-white: #fff;
@@ -10,7 +11,7 @@ $flex-display-style: inline-flex;
 $font-weight-bold: 700;
 
 .top-three-box {
-  padding-left: 7%;
+  padding-left: 8%;
   align-items: center;
   display: flex;
   justify-content: center;
@@ -21,6 +22,11 @@ $font-weight-bold: 700;
   .top-two,
   .top-three {
     margin: 0 50px;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.04);
+    }
 
     &-span {
       position: absolute;
@@ -63,7 +69,7 @@ $font-weight-bold: 700;
 
   .top-one {
     .top-one-span {
-      transform: translate(-30%, 0%);
+      transform: translate(-40%, 0%);
       display: inline-flex;
       padding: 10px 20px;
       justify-content: center;
@@ -72,6 +78,7 @@ $font-weight-bold: 700;
     }
 
     .top-one-img {
+      // cursor: pointer;
       width: 280px;
       height: 280px;
     }
@@ -83,7 +90,7 @@ $font-weight-bold: 700;
 
   .top-two {
     .top-two-span {
-      transform: translate(-20%, 0%);
+      transform: translate(-45%, 0%);
       display: inline-flex;
       padding: 5px 10px;
       justify-content: center;
@@ -103,7 +110,7 @@ $font-weight-bold: 700;
 
   .top-three {
     .top-three-span {
-      transform: translate(-10%, 0%);
+      transform: translate(-50%, 0%);
       display: inline-flex;
       padding: 3px 7px;
       justify-content: center;

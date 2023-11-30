@@ -18,7 +18,7 @@ const Topheader: FunctionComponent = () => {
   };
 
   return (
-    <div className="top-header">
+    <div className="top-header" style={{ zIndex: 0 }}>
       <h1 className="leader-title">Leaderboard of the Week</h1>
       <div
         className={`week-btn ${clicked.week ? 'clicked' : ''}`}
